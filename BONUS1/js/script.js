@@ -24,6 +24,7 @@ const images = [
 
 for (let index = 0; index < images.length; index++) {
     const imgContainer = document.querySelector('div.img-container');
+    const thumbnailsContainer = document.querySelector('div.thumbnails');
     let img = `<div class="slide hidden">
             <img src="${images[index].image}">
             <div class="absolute">
@@ -32,11 +33,19 @@ for (let index = 0; index < images.length; index++) {
             </div>
         </div>`;    
     imgContainer.innerHTML += img;
+
+    let imgThumb = `<div class="thumb filter">
+            <img src="${images[index].image}">            
+        </div>`;
+    thumbnailsContainer.innerHTML += imgThumb;
 }
 
 const allSlides = document.querySelectorAll('.slide');
 allSlides[0].classList.remove("hidden");
 
+const allThums = document.querySelectorAll('.thumb');
+allThums[0].classList.remove("filter");
+allThums[0].classList.add("current");
 /*----------------------------------------*/ 
 const arrowLeft = document.querySelector('.left');
 const arrowRight = document.querySelector('.right');
@@ -47,19 +56,27 @@ arrowRight.addEventListener('click',
     function(){
         if (imgBlock == (allSlides.length - 1) ){
             allSlides[imgBlock].classList.add("hidden");
+            allThums[imgBlock].classList.remove("current");
+            allThums[imgBlock].classList.add("filter");           
             imgBlock = 0;
             allSlides[imgBlock].classList.remove("hidden");
+            allThums[imgBlock].classList.add("current");
+            allThums[imgBlock].classList.remove("filter");
         }
 
         else if(allSlides[imgBlock].className.includes('hidden')){
-            allSlides[imgBlock].classList.remove("hidden");
+            allSlides[imgBlock].classList.remove("hidden");            
             imgBlock = imgBlock + 1;
-            allSlides[imgBlock].classList.add("hidden");
+            allSlides[imgBlock].classList.add("hidden");            
         }
         else{
             allSlides[imgBlock].classList.add("hidden");
+            allThums[imgBlock].classList.remove("current");
+            allThums[imgBlock].classList.add("filter");
             imgBlock = imgBlock + 1;
             allSlides[imgBlock].classList.remove("hidden");
+            allThums[imgBlock].classList.add("current");
+            allThums[imgBlock].classList.remove("filter");
         }
     }
 );
@@ -68,8 +85,12 @@ arrowLeft.addEventListener('click',
     function () {
         if (imgBlock == 0) {
             allSlides[imgBlock].classList.add("hidden");
+            allThums[imgBlock].classList.remove("current");
+            allThums[imgBlock].classList.add("filter");
             imgBlock = allSlides.length - 1;
             allSlides[imgBlock].classList.remove("hidden");
+            allThums[imgBlock].classList.add("current");
+            allThums[imgBlock].classList.remove("filter");
         }
         else if (allSlides[imgBlock].className.includes('hidden')) {
             allSlides[imgBlock].classList.remove("hidden");
@@ -78,8 +99,12 @@ arrowLeft.addEventListener('click',
         }
         else {
             allSlides[imgBlock].classList.add("hidden");
+            allThums[imgBlock].classList.remove("current");
+            allThums[imgBlock].classList.add("filter");
             imgBlock = imgBlock - 1;
             allSlides[imgBlock].classList.remove("hidden");
+            allThums[imgBlock].classList.add("current");
+            allThums[imgBlock].classList.remove("filter");
         }
     }
 );

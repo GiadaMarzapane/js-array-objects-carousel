@@ -27,7 +27,7 @@ main div.container-carousel{
     border: 3px solid black;
     border-radius: 10px;
     width: 60vw;
-    height: 50vh;
+    height: 60vh;
     position: relative;
 }
 
@@ -57,7 +57,7 @@ div.img-container > div{
     width: 100%;
 }
 
-div img{
+div.img-container> div img{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -82,4 +82,34 @@ div img{
 .absolute > p{
     margin-top: 5px;
     font-size: 13px;
+}
+
+div.thumbnails{
+    width: 15vw;
+    height: 60vh;
+    border: 1px solid;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+div.thumbnails > .thumb{
+    height: calc(100% / 5);
+    width: 100%;
+    border-radius: 10px;
+}
+
+div.thumbnails > .thumb img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.filter{
+    filter: grayscale(1);
+}
+
+.current{
+    border: 2px solid white;
 }
