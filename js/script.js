@@ -45,9 +45,13 @@ let imgBlock = 0;
 
 arrowRight.addEventListener('click',
     function(){
-        arrowLeft.classList.remove('hidden');
+        if (imgBlock == (allSlides.length - 1) ){
+            allSlides[imgBlock].classList.add("hidden");
+            imgBlock = 0;
+            allSlides[imgBlock].classList.remove("hidden");
+        }
 
-        if(allSlides[imgBlock].className.includes('hidden')){
+        else if(allSlides[imgBlock].className.includes('hidden')){
             allSlides[imgBlock].classList.remove("hidden");
             imgBlock = imgBlock + 1;
             allSlides[imgBlock].classList.add("hidden");
@@ -57,15 +61,20 @@ arrowRight.addEventListener('click',
             imgBlock = imgBlock + 1;
             allSlides[imgBlock].classList.remove("hidden");
         }
-        if (imgBlock == (allSlides.length - 1)) {
-            arrowRight.classList.add('hidden');
-        }
+        // if (imgBlock == (allSlides.length - 1)) {
+        //     arrowRight.classList.add('hidden');
+        // }       
     }
 );
 
 arrowLeft.addEventListener('click',
     function () {
-        if (allSlides[imgBlock].className.includes('hidden')) {
+        if (imgBlock == 0) {
+            allSlides[imgBlock].classList.add("hidden");
+            imgBlock = allSlides.length - 1;
+            allSlides[imgBlock].classList.remove("hidden");
+        }
+        else if (allSlides[imgBlock].className.includes('hidden')) {
             allSlides[imgBlock].classList.remove("hidden");
             imgBlock = imgBlock - 1;
             allSlides[imgBlock].classList.add("hidden");
@@ -74,9 +83,6 @@ arrowLeft.addEventListener('click',
             allSlides[imgBlock].classList.add("hidden");
             imgBlock = imgBlock - 1;
             allSlides[imgBlock].classList.remove("hidden");
-        }
-        if (imgBlock == 0) {
-            arrowLeft.classList.add('hidden');
-        }
+        }        
     }
 );
