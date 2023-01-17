@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 /* REGOLE CSS */
 body{
     font-family: 'Montserrat', sans-serif;
@@ -37,16 +36,21 @@ main div.container-carousel{
     z-index: 10;
 } */
 
-i.fa-circle-left {
+
+.left {
     position: absolute;
     top: 50%;
     left: 10px;
 }
 
-i.fa-circle-right {
+.right {
     position: absolute;
     top: 50%;
     right: 10px;
+}
+
+.hidden {
+    display: none;
 }
 
 div.img-container{
@@ -69,9 +73,6 @@ div img{
 .slide{
     color: white;
 }
-.hidden{
-    display: none;
-}
 
 .absolute{
     width: 80%;
@@ -82,6 +83,7 @@ div img{
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.3);
 }
+
 
 .absolute > p{
     margin-top: 5px;

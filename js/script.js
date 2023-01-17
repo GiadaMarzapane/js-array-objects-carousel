@@ -34,20 +34,49 @@ for (let index = 0; index < images.length; index++) {
     imgContainer.innerHTML += img;
 }
 
-const allSlides = document.querySelectorAll('.hidden');
+const allSlides = document.querySelectorAll('.slide');
 allSlides[0].classList.remove("hidden");
 
 /*----------------------------------------*/ 
-const arrowLeft = document.querySelector('.fa-circle-left');
-const arrowRight = document.querySelector('.fa-circle-right');
+const arrowLeft = document.querySelector('.left');
+const arrowRight = document.querySelector('.right');
 /*----------------------------------------*/
 let imgBlock = 0;
 
 arrowRight.addEventListener('click',
     function(){
-        allSlides[imgBlock].classList.add("hidden");
-        imgBlock = imgBlock + 1;
-        allSlides[imgBlock].classList.remove("hidden");
-        // previous.classList.remove("hidden");
+        arrowLeft.classList.remove('hidden');
+
+        if(allSlides[imgBlock].className.includes('hidden')){
+            allSlides[imgBlock].classList.remove("hidden");
+            imgBlock = imgBlock + 1;
+            allSlides[imgBlock].classList.add("hidden");
+        }
+        else{
+            allSlides[imgBlock].classList.add("hidden");
+            imgBlock = imgBlock + 1;
+            allSlides[imgBlock].classList.remove("hidden");
+        }
+        if (imgBlock == (allSlides.length - 1)) {
+            arrowRight.classList.add('hidden');
+        }
+    }
+);
+
+arrowLeft.addEventListener('click',
+    function () {
+        if (allSlides[imgBlock].className.includes('hidden')) {
+            allSlides[imgBlock].classList.remove("hidden");
+            imgBlock = imgBlock - 1;
+            allSlides[imgBlock].classList.add("hidden");
+        }
+        else {
+            allSlides[imgBlock].classList.add("hidden");
+            imgBlock = imgBlock - 1;
+            allSlides[imgBlock].classList.remove("hidden");
+        }
+        if (imgBlock == 0) {
+            arrowLeft.classList.add('hidden');
+        }
     }
 );
