@@ -66,6 +66,24 @@ div img{
     object-position: center;
 }
 
+.slide{
+    color: white;
+}
 .hidden{
     display: none;
+}
+
+.absolute{
+    width: 80%;
+    padding: 5px;
+    position: absolute;
+    top: 70%;
+    left: 5px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.absolute > p{
+    margin-top: 5px;
+    font-size: 13px;
 }

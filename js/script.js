@@ -24,8 +24,12 @@ const images = [
 
 for (let index = 0; index < images.length; index++) {
     const imgContainer = document.querySelector('div.img-container');
-    let img = `<div class="hidden">
-        <img src="${images[index].image}">
+    let img = `<div class="slide hidden">
+            <img src="${images[index].image}">
+            <div class="absolute">
+                <h3>${images[index].title}</h3>
+                <p>${images[index].text}</p>
+            </div>
         </div>`;    
     imgContainer.innerHTML += img;
 
