@@ -1,0 +1,18 @@
+/* --------------RESET-------------- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* REGOLE CSS */
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+header{
+    height: 10vh;
+    line-height: 10vh;
+    text-align: center;
+    background-color: lavender;
+}
