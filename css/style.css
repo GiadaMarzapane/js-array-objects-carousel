@@ -18,8 +18,7 @@ header{
 }
 
 main{
-    display: flex;
-    align-items: center;
+    display: flex;    align-items: center;
     justify-content: center;
     height: 90vh;
 }
@@ -29,14 +28,42 @@ main div.container-carousel{
     border-radius: 10px;
     width: 60vw;
     height: 50vh;
+    position: relative;
 }
 
-img{
-    display: block;
+/* div.comandi {
+    position: relative;
+    height: 100%;
+    z-index: 10;
+} */
+
+i.fa-circle-left {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+}
+
+i.fa-circle-right {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+}
+
+div.img-container{
+    height: 100%;
+    width: 100%;
+}
+
+div.img-container > div{
+    height: 100%;
+    width: 100%;
+}
+
+div img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 0px -190px;
+    object-position: center;
 }
 
 .hidden{

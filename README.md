@@ -1,7 +1,7 @@
 # js-array-objects-carousel:
 Dato un array di oggetti creare un carosello
 <!-- ---------------------------------------------- -->
-MILESTONE 0:
+# MILESTONE 0: OK //
 Come nel primo carosello realizzato, focalizziamoci prima sulla creazione del markup statico: costruiamo il container e inseriamo l'immagine grande in modo da poter stilare lo slider.
 <!-- ---------------------------------------------- -->
 MILESTONE 1:
