@@ -32,13 +32,22 @@ for (let index = 0; index < images.length; index++) {
             </div>
         </div>`;    
     imgContainer.innerHTML += img;
-
 }
+
 const allSlides = document.querySelectorAll('.hidden');
 allSlides[0].classList.remove("hidden");
-
 
 /*----------------------------------------*/ 
 const arrowLeft = document.querySelector('.fa-circle-left');
 const arrowRight = document.querySelector('.fa-circle-right');
 /*----------------------------------------*/
+let imgBlock = 0;
+
+arrowRight.addEventListener('click',
+    function(){
+        allSlides[imgBlock].classList.add("hidden");
+        imgBlock = imgBlock + 1;
+        allSlides[imgBlock].classList.remove("hidden");
+        // previous.classList.remove("hidden");
+    }
+);
