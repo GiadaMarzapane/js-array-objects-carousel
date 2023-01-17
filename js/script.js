@@ -61,9 +61,6 @@ arrowRight.addEventListener('click',
             imgBlock = imgBlock + 1;
             allSlides[imgBlock].classList.remove("hidden");
         }
-        // if (imgBlock == (allSlides.length - 1)) {
-        //     arrowRight.classList.add('hidden');
-        // }       
     }
 );
 
@@ -83,6 +80,6 @@ arrowLeft.addEventListener('click',
             allSlides[imgBlock].classList.add("hidden");
             imgBlock = imgBlock - 1;
             allSlides[imgBlock].classList.remove("hidden");
-        }        
+        }
     }
 );
